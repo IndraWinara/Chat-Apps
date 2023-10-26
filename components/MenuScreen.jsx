@@ -7,7 +7,7 @@ import ModalEdit from './ModalEdit'
 const MenuScreen = ({ data }) => {
     return (
         <Menu >
-            <MenuButton as={Button} colorScheme='linkedin' size={'xs'} rightIcon={<DragHandleIcon />}>
+            <MenuButton as={Button} colorScheme='pink' size={'xs'} rightIcon={<DragHandleIcon />}>
             </MenuButton>
             <MenuList minWidth={100} >
                 <div className='flex flex-col justify-center w-full items-center'>

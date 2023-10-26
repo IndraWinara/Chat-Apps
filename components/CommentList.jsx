@@ -35,7 +35,7 @@ const CommentList = ({ dataPost }) => {
                 <h2>
                     <AccordionButton color={'brown'} onClick={() => handleCheck(userId, dataPost)}>
                         <Box flex='1' textAlign='left'>
-                            <p className='text-[14px] font-bold'>Comment ({list?.data?.length})</p>
+                            <p className='text-[14px] font-bold'>Comment ({dataPost?.replies_count})</p>
                         </Box>
                         <AccordionIcon />
                     </AccordionButton>
@@ -44,7 +44,7 @@ const CommentList = ({ dataPost }) => {
                     {sortAscend?.map((item) => {
                         const dateString = item?.updated_at;
                         const date = new Date(dateString);
-                        console.log({item})
+
 
                         const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour : '2-digit', minute : '2-digit' };
                         const formattedDate = date.toLocaleDateString(undefined, options);
@@ -58,7 +58,7 @@ const CommentList = ({ dataPost }) => {
                                 <Avatar name={item?.user?.name} size={'xs'} />
                                 </div>
                                 <div className='flex flex-col  w-fit'>
-                                    <div className='flex items-center justify-center gap-1'>
+                                    <div className='flex items-center gap-1'>
                                     <div onClick={()=> handleSend(item)} className='font-bold cursor-pointer capitalize flex w-fit h-fit'>
                                         {item?.user?.name} :
                                     </div>

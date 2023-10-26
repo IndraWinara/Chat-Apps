@@ -7,6 +7,7 @@ import CommentList from './CommentList'
 import Cookies from 'js-cookie'
 import { Avatar } from '@chakra-ui/react'
 import MenuScreen from './MenuScreen'
+import LikeScreen from './LikeScreen'
 
 
 
@@ -41,8 +42,14 @@ const Card = ({ data }) => {
         <div className='overflow-auto h-[100px] md:h-fit md:max-h-[70px] text-[14px]'>
           <p>{data?.description}</p>
         </div>
-        <CommentList dataPost={data} />
-        <div className='flex justify-end mt-2'>
+        <div className=''>
+          <CommentList dataPost={data} />
+        </div>
+        <div className='flex justify-between mt-2'>
+          <div className='flex items-center gap-2'>
+            <LikeScreen data={data} />
+            <p className='text-[14px] font-bold'>({data?.likes_count})</p>
+          </div>
           <ModalComment data={data} />
         </div>
       </div>

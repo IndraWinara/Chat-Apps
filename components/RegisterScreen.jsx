@@ -33,7 +33,7 @@ const RegisterScreen = () => {
                 isClosable: true,
                 position: 'top'
             })
-           
+           router.push('/')
 
             // console.log({token})
         } catch (error) {
