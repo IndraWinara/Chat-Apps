@@ -23,11 +23,17 @@ const DetailProfile = () => {
         filteredData?.map((prev) => setFilter(prev))
     }, [filteredData])
 
-    const dateString = filter?.created_at || userReplies.created_at
-    const date = new Date(dateString);
+    const dateString1 = filter?.created_at 
+    const date1 = new Date(dateString1);
   
-    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-    const formattedDate = date.toLocaleDateString(undefined, options);
+    const options1 = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    const formattedDate1 = date1.toLocaleDateString(undefined, options1);
+
+    const dateString2 = userReplies?.created_at 
+    const date2 = new Date(dateString2);
+  
+    const options2 = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    const formattedDate2 = date2.toLocaleDateString(undefined, options2);
    
     return (
         <div className='p-4 border-t-[4px] border-[1px] border-sky-500 rounded-lg md:w-[500px] w-[400px] h-fit'>
@@ -36,7 +42,7 @@ const DetailProfile = () => {
                 <ul className='w-full'>
                     <li className='text-[16px] font-semibold w-full'> Name : <span className='font-normal'>{filter  ? filter?.user?.name : userReplies?.user?.name}</span></li>
                     <li className='text-[16px] font-semibold w-full'> Email : <span className='font-normal'>{filter  ? filter?.user?.email : userReplies?.user?.email}</span></li>
-                    <li className='text-[16px] font-semibold w-full'> Account Create : <span className='font-normal'>{filter  && formattedDate }</span></li>
+                    <li className='text-[16px] font-semibold w-full'> Account Create : <span className='font-normal'>{filter ? formattedDate1 : formattedDate2 }</span></li>
                     <ProfileAccordion filterdata={filteredUser}/>
                 </ul>
             </div>
