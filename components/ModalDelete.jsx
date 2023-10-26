@@ -45,17 +45,16 @@ const ModalDelete = ({ data }) => {
   }
   return (
     <>
-      <Button
+      <button
         onClick={() => {
           setOverlay(<OverlayOne />)
           onOpen()
           // setDeleteId(data.id)
         }}
-        colorScheme='red'
-        size={'sm'}
+        className='bg-red-600 w-[80px] rounded-full text-white font-semibold text-[14px] mt-2'
       >
         Delete
-      </Button>
+      </button>
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         {overlay}
         <ModalContent width={350}>

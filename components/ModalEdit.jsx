@@ -14,16 +14,15 @@ const ModalEdit = ({ data }) => {
   const [overlay, setOverlay] = useState(<OverlayOne />)
   return (
     <>
-      <Button
+      <button
         onClick={() => {
           setOverlay(<OverlayOne />)
           onOpen()
         }}
-        colorScheme='green'
-        size={'sm'}
+        className='bg-green-500 w-[80px] text-white font-semibold rounded-full text-[14px]'
       >
         Edit
-      </Button>
+      </button>
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         {overlay}
         <ModalContent width={350}>

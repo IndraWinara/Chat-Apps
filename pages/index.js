@@ -10,21 +10,22 @@ import LayoutRoot from '@/layouts/Layout'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-const token = Cookies.get('token')
-const {data : listData } = useQueries({prefixUrl : 'https://paace-f178cafcae7b.nevacloud.io/api/posts?type=all',tokenJwt : token})
+  const token = Cookies.get('token')
+  const { data: listData } = useQueries({ prefixUrl: 'https://paace-f178cafcae7b.nevacloud.io/api/posts?type=all', tokenJwt: token })
 
 
   return (
     <LayoutRoot>
-    <div className="flex flex-col justify-between h-screen">
-      <div className='w-full flex flex-col'>
-        <div className='p-2 mt-[90px] flex flex-col items-center justify-center gap-2'>
-          {listData?.data?.map((item)=> (
-          <Card data={item} key={item?.id} />
-          ))}
+      <div className="flex flex-col justify-between h-screen">
+        <div className='w-full flex flex-col'>
+          <div className='p-2 mt-[90px] flex flex-col items-center justify-center gap-2'>
+            {listData?.data?.map((item) => {
+              return (<Card data={item} key={item?.id} />)
+              
+            })}
+          </div>
         </div>
       </div>
-    </div>
     </LayoutRoot>
   )
 }

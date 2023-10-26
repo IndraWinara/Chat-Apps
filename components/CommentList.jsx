@@ -1,12 +1,15 @@
 import { useQueries } from '@/hooks/useQueries'
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Avatar, Box } from '@chakra-ui/react'
 import Cookies from 'js-cookie'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ModalDelComment from './ModalDelComment'
 import { useRouter } from 'next/router'
+import { GlobalContext } from '@/context/GlobalContext'
 
 const CommentList = ({ dataPost }) => {
     const userId = dataPost.id
+    const {stateInput} = useContext(GlobalContext)
+    const {setUserReplies} = stateInput
     const [postId, setPostId] = useState()
     const token = Cookies.get('token')
     const { data: list, fetchingData } = useQueries()
@@ -22,7 +25,10 @@ const CommentList = ({ dataPost }) => {
         return tanggal1 - tanggal2;
     })
 
-
+    const handleSend = (item)=>{
+        router.push(`/profile/${item.id}`)
+        setUserReplies(item)
+    }
     return (
         <Accordion allowToggle>
             <AccordionItem>
@@ -38,6 +44,7 @@ const CommentList = ({ dataPost }) => {
                     {sortAscend?.map((item) => {
                         const dateString = item?.updated_at;
                         const date = new Date(dateString);
+                        console.log({item})
 
                         const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour : '2-digit', minute : '2-digit' };
                         const formattedDate = date.toLocaleDateString(undefined, options);
@@ -52,7 +59,7 @@ const CommentList = ({ dataPost }) => {
                                 </div>
                                 <div className='flex flex-col  w-fit'>
                                     <div className='flex items-center justify-center gap-1'>
-                                    <div onClick={()=> router.push(`/profile/${item?.user?.id}`)} className='font-bold cursor-pointer capitalize flex w-[50px] md:w-fit h-fit'>
+                                    <div onClick={()=> handleSend(item)} className='font-bold cursor-pointer capitalize flex w-fit h-fit'>
                                         {item?.user?.name} :
                                     </div>
                                     <p className={`italic`}>{item.description}</p>
