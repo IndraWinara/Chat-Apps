@@ -3,3 +3,8 @@
 @tailwind utilities;
 
 
+.bg-login {
+    background-image: url('https://i.redd.it/r8m5qjexzdf31.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

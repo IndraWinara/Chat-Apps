@@ -5,7 +5,7 @@ import React from 'react'
 const Register = () => {
   return (
     <LayoutRoot>
-    <div className='h-screen flex justify-center items-center'>
+    <div className='bg-login h-screen flex justify-center items-center'>
         <RegisterScreen/>
     </div>
     </LayoutRoot>

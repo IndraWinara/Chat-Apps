@@ -5,7 +5,7 @@ import React from 'react'
 const page = () => {
   return (
     <LayoutRoot>
-    <div className='h-screen flex justify-center items-center'>
+    <div className='h-screen bg-login flex justify-center items-center'>
       <LoginScreen/>
     </div>
     </LayoutRoot>

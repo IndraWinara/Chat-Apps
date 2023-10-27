@@ -5,7 +5,7 @@ import React from 'react'
 const Profile = () => {
     return (
         <LayoutRoot>
-            <div className='h-screen flex justify-center items-center'>
+            <div className='bg-slate-500 h-screen flex justify-center items-center'>
                 <ProfileScreen />
             </div>
         </LayoutRoot>

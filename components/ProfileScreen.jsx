@@ -24,7 +24,7 @@ const DetailProfile = ({data}) => {
     const formattedDate = date.toLocaleDateString(undefined, options);
   
     return (
-        <div className='p-4 border-t-[4px] border-[1px] border-sky-500 rounded-lg md:w-[500px] w-[400px] h-fit'>
+        <div className='p-4 bg-white border-t-[4px] border-[1px] border-sky-500 rounded-lg md:w-[500px] w-[400px] h-fit'>
             <div className='flex flex-col h-fit w-full'>
                 <h1 className=''>Welcome , <span className='font-extrabold'>{list?.data?.name} </span>this your personal information</h1>
                 <ul className='w-full'>

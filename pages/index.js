@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <LayoutRoot>
-      <div className="flex flex-col justify-between h-screen">
+      <div className="flex bg-slate-500 flex-col justify-between h-full">
         <div className='w-full flex flex-col'>
           <div className='p-2 mt-[90px] flex flex-col items-center justify-center gap-2 mb-[100px]'>
             {listData?.data?.map((item) => {

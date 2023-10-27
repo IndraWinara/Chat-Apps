@@ -56,7 +56,7 @@ const Header = ({token : ssr}) => {
             <HeaderMenu/>
           </div>
         ) : (
-          <Button onClick={() => router.push('/register')}>Get Started !</Button>
+          <Button colorScheme={'blackAlpha'} onClick={() => router.push('/register')}>Get Started !</Button>
         )}
       </div>
     </header>

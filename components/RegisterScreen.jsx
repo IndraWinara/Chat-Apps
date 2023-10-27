@@ -33,7 +33,7 @@ const RegisterScreen = () => {
                 isClosable: true,
                 position: 'top'
             })
-           router.push('/')
+           router.push('/login')
 
             // console.log({token})
         } catch (error) {
@@ -49,7 +49,7 @@ const RegisterScreen = () => {
 
     }
     return (
-        <div className='p-4 flex flex-row border-t-[4px] border-slate-800 border-[1px] md:w-[500px] md:h-[400px] w-[300px] h-[500px] rounded-lg'>
+        <div className='p-4 bg-white md:justify-start justify-center flex flex-row border-t-[4px] border-slate-800 border-[1px] md:w-[500px] md:h-[400px] w-[300px] h-[500px] rounded-lg'>
             <div className='w-[200px] md:flex hidden mr-2'>
                 <Image src='https://i0.wp.com/www.techquintal.com/wp-content/uploads/2022/07/Virtual-Memory.jpg?resize=768%2C432&ssl=1' alt='loginbg' width={400} height={400} className='w-full h-full rounded-full object-cover' />
             </div>

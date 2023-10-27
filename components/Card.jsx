@@ -23,7 +23,7 @@ const Card = ({ data }) => {
   const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
   const formattedDate = date.toLocaleDateString(undefined, options);
   return (
-    <div className='border-t-[4px] border-sky-500 border-[1px] p-2 md:w-[700px] md:h-fit w-[400px] h-fit rounded-lg'>
+    <div className='border-t-[4px] bg-white border-sky-500 border-[1px] p-2 md:w-[700px] md:h-fit w-[400px] h-fit rounded-lg'>
       <div className='flex flex-col'>
         <div className='overflow-auto'>
           <div className='flex flex-row justify-between items-center gap-2'>
